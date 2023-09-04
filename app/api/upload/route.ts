@@ -4,12 +4,6 @@ import { NextResponse } from "next/server";
 
 
           
-// cloudinary.config({ 
-//   cloud_name: 'dpayfdoa2', 
-//   api_key: '326947717624592', 
-//   api_secret: 'pUTt2-RT7W5Hw1Bl07Nq66AhX9M' 
-// });
-
 
 cloudinary.config({ 
   

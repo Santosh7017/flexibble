@@ -104,7 +104,7 @@ const Project = async ({ params: { id } }: { params: { id: string } }) => {
                         alt="dot" />
                     <Link href={projectDetails?.liveSiteUrl} target='_blank'
                         rel='noreferrer' className='flexCenter gap-2 tex-sm font-medium text-primary-purple' >
-                        <span
+                       🚀 <span
                             className='underline'
                         >
                             Live Site
@@ -114,18 +114,18 @@ const Project = async ({ params: { id } }: { params: { id: string } }) => {
                 </div>
             </section>
 
-            <section className='flexCenter w-full gap-8 mt-28'>
-                <span className='w-full h-0.5 bg-light-white-200' />
-                    <Link href={renderLink()} className='min-w-[82px] h-[82px]'>
-                        <Image 
+             <section className="flexCenter w-full gap-8 mt-28">
+                <span className="w-full h-0.5 bg-light-white-200" />
+                <Link href={renderLink()} className="min-w-[82px] h-[82px]">
+                    <Image
                         src={projectDetails?.createdBy?.avatarUrl}
-                        className='rounded-full'
+                        className="rounded-full"
                         width={82}
                         height={82}
                         alt="profile image"
-                        />
-                    </Link>
-
+                    />
+                </Link>
+                <span className="w-full h-0.5 bg-light-white-200" />
             </section>
 
             <RelatedProjecs  userId={projectDetails?.createdBy?.id} projectId={projectDetails?.id} />

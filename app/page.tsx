@@ -30,7 +30,7 @@ const Home = async () => {
         )
     }
     return (
-       <section className="flex-start flex-col padding mb-6">
+       <section className="flexStart flex-col paddings mb-16">
             <h1>Categories</h1>
            <section className="projects-grid">
             {projectsToDisplay.map(({node}: {node: ProjectInterface}) => (

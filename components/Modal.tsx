@@ -26,7 +26,7 @@ const Modal = ({children}: {children: ReactNode}) => {
 
   return (
     <div ref={overlay} className='modal'  onClick={handleClick}>
-        <button type="button" onClick={onDismiss} className="absolute top-4 right-8">
+        <button type="button" onClick={onDismiss} className="absolute top4 right-8">
             <Image src="/close.svg" width={17} height={17} alt="close"/>
 
         </button>

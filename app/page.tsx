@@ -60,12 +60,12 @@ const Home = async ({searchParams: {category, endcursor}}: Props) => {
                 />
             ))}
            </section>
-           <LoadMore
-           startCursor={pagination.startCursor}
-           endCursor={pagination.endCursor}
-           hasPreviousPage={pagination.hasNextPage}
-           hasNextPage={pagination.hasNextPage}
-           />
+           <LoadMore 
+        startCursor={data?.projectSearch?.pageInfo?.startCursor} 
+        endCursor={data?.projectSearch?.pageInfo?.endCursor} 
+        hasPreviousPage={data?.projectSearch?.pageInfo?.hasPreviousPage} 
+        hasNextPage={data?.projectSearch?.pageInfo.hasNextPage}
+      />
 
        </section>
     )

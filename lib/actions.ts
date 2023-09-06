@@ -85,21 +85,42 @@ export const createNewProject = async (form: ProjectForm, creatorId: string, tok
 };
 
 
-export const fetchAllProjects = async(category?: string | null, endcursor?: string | null) => {
-  client.setHeader('x-api-key', apikey);
+// export const fetchAllProjects = async(category?: string | null, endcursor?: string | null) => {
+//   client.setHeader('x-api-key', apikey);
   
   
-  if( category ){
-    const validCategory = category ?? ''
+//   if( category ){
+//     const validCategory = category ?? ''
     
-    return makeGraphQLRequest(projectsQueryWithFilter, { category:validCategory, endcursor })
-  }else
-  {
-   
-  return makeGraphQLRequest(projectsQuery, { endcursor })
-  }
+//     return makeGraphQLRequest(projectsQueryWithFilter, { category:validCategory, endcursor })
+//   }else
+//   {
+
+//   return makeGraphQLRequest(projectsQuery, { endcursor })
+//   }
   
-}
+// }
+export const fetchAllProjects = async (category?: string | null, endcursor?: string | null) => {
+  client.setHeader('x-api-key', apikey);
+
+  const variables: { category?: string; endcursor?: string } = {};
+
+  if (category) {
+    variables.category = category;
+  }
+
+  if (endcursor) {
+    variables.endcursor = endcursor;
+  }
+
+  if (Object.keys(variables).length === 0) {
+    // No variables to pass, use the query without variables
+    return makeGraphQLRequest(projectsQuery);
+  } else {
+    return makeGraphQLRequest(projectsQueryWithFilter, variables);
+  }
+};
+
 
 export const getProjectDetails = (id: string) =>{
   client.setHeader('x-api-key', apikey);

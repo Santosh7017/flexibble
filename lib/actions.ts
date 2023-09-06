@@ -93,8 +93,11 @@ export const fetchAllProjects = async(category?: string | null, endcursor?: stri
     const validCategory = category ?? ''
     
     return makeGraphQLRequest(projectsQueryWithFilter, { category:validCategory, endcursor })
-  }
+  }else
+  {
+   
   return makeGraphQLRequest(projectsQuery, { endcursor })
+  }
   
 }
 

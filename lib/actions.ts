@@ -2,7 +2,8 @@ import { ProjectForm } from '@/common.types';
 import { createProjectMutation, createUserMutation, deleteProjectMutation, getProjectByIdQuery, getProjectsOfUserQuery, getUserQuery, projectsQuery, projectsQueryWithFilter, updateProjectMutation } from '@/graphql';
 import { GraphQLClient } from "graphql-request";
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = true;
+
 const apiUrl = isProduction ? process.env.NEXT_PUBLIC_GRAFBASE_API_URL || '' : 'http://127.0.0.1:4000/graphql'
 const apikey = isProduction ? process.env.NEXT_PUBLIC_GRAFBASE_API_KEY || '' : '1234'
 const serverUrl = isProduction ? process.env.NEXT_PUBLIC_GRAFBASE_SERVER_URL || '' : 'http://localhost:3000';

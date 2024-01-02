@@ -113,21 +113,6 @@ export const projectsQueryWithFilter = `
   }
 `;
 
-// export const projectsQuery = `
-//   query getProjects($endcursor: String) {
-//     projectSearch(first: 8, after: $endcursor) {
-//      ...
-//     }
-//   }
-// `;
-
-// export const projectsQueryWithFilter = `
-//   query getProjects($category: String, $endcursor: String) {
-//     projectSearch(first: 8, after: $endcursor, filter: {category: {eq: $category}}) {
-//       ...
-//     }
-//   }
-// `;
 
 export const getProjectByIdQuery = `
   query GetProjectById($id: ID!) {

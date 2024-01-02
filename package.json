@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "graphql": "npx grafbase@0.24 dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
